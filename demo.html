@@ -1,0 +1,76 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="hub-container" onclick="hubConTantClick(id)" class="grid p-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h3>Hello</h3>
+    </div>
+    
+    <script>
+       const hubConTantClick = async (id) => {
+  // console.log(id);
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/ai/tool/${id}`
+  );
+  const data = await res.json();
+  const hub = data.data;
+  console.log(hub);
+};
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="max-w-xs m-auto">
+        <div class="flex gap-3 justify-center">
+            <div>
+                <img class="m-auto" src="./ai.png" alt="" />
+            </div>
+            <div class='bg-[#e5a8a8] p-2'>
+                <div>
+                    <h1 class='font-semibold'>${phone.description}</h1>
+                </div>
+                <div class="flex gap-2">
+                    <h3 class="bg-white">$10/ <br>
+                        month <br>
+                        Basic</h3>
+                    <h3 class="bg-white">$50/ <br>
+                        month <br>
+                        Pro</h3>
+                    <h3 class="bg-white">Contact <br>
+                        us <br>
+                        Enterprise</h3>
+                </div>
+                <div class="flex justify-between">
+                    <div>
+                        <h1>Integrations</h1>
+                    </div>
+                    <div>
+                        <h1>Integrations</h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

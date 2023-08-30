@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./galaxy.png" type="image/x-icon">
+    <title>Al Universe Hub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-center font-bold text-3xl my-6 text-gray-500">Al Universe Hub</h2>
+    </header>
+
+    <main>
+        <!-- Hub-container -->
+        <div id="hub-container" onclick="hubConTantClick(id)" class="grid p-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+
+          <!-- show all button -->
+          <div id="show-all-container" class="hidden text-center my-8">
+            <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+        </div>
+
+
+        <!-- Show Details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <button class="btn btn-sm btn-circle bg-red-500  absolute right-1 top-1 text-white">✕</button>
+                <div id="show-detail-container" class="flex gap-4 justify-center mr-5">
+
+                </div>
+                
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="/js/universe.js"></script>
+</body>
+
+</html>
