@@ -10,6 +10,15 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #show-detail-container {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 100%; /* Ensure the modal doesn't exceed the viewport width */
+  height: 80%; /* Adjust the height as needed */
+  max-height: 100%; /* Ensure the modal doesn't exceed the viewport height */
+}
+    </style>
 </head>
 
 <body>
@@ -34,7 +43,7 @@
         <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
             <form method="dialog" class="modal-box">
                 <button class="btn btn-sm btn-circle bg-red-500  absolute right-1 top-1 text-white">✕</button>
-                <div id="show-detail-container" class="flex gap-4 justify-center mr-5">
+                <div id="show-detail-container" class="flex gap-4 justify-center mt-5">
 
                 </div>
                 

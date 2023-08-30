@@ -30,7 +30,7 @@ const displayHub = (hubs, isShowAll) => {
     let featuresHTML = "";
     // Add each feature to the HTML string
     hub.features.forEach((feature) => {
-      featuresHTML += `<ol type = '1' class='pb-2'><li>${feature}</li> </ol>`;
+      featuresHTML += `<li>${feature}</li>`;
     });
 
     hubCard.innerHTML = `
@@ -40,7 +40,10 @@ const displayHub = (hubs, isShowAll) => {
   <div class="card-body">
   <h2 class='font-bold text-2xl pb-2'>Features</h2>
   
+  <ol class='list-decimal'>
   ${featuresHTML} 
+  </ol>
+  
 
   <hr>
 
@@ -81,8 +84,9 @@ const hubConTantClick = async (id) => {
 // using for load the data in modal
 const showPhoneDetails = (phone) => {
   console.log(phone);
-
+  console.log(phone.features['1'].feature_name);
   const showDetailContainer = document.getElementById("show-detail-container");
+
   showDetailContainer.innerHTML = `
   <div class ='bg-[#e6c8c8] p-2'>
   <div class='mb-2'>
@@ -99,12 +103,17 @@ Pro</h3>
 us <br>
 Enterprise</h3>
   </div>
-  <div class="flex justify-between">
+  <div class="flex justify-between mt-3">
   <div>
-      <h1>Integrations</h1>
+      <h1 class='font-bold pb-2'>Features</h1>
+      <ul class = 'list-decimal'>
+       <li>${phone.features['1'].feature_name}</li>
+       <li>${phone.features['2'].feature_name}</li>
+       <li>${phone.features['3'].feature_name}</li>
+      </ul>
   </div>
   <div>
-      <h1>Integrations</h1>
+      <h1 class='font-bold pb-2'>Integrations</h1>
   </div>
 </div>
 </div>
