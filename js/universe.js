@@ -22,7 +22,7 @@ const displayHub = (hubs, isShowAll) => {
   }
 
   hubs.forEach((hub) => {
-    console.log(hub);
+    // console.log(hub);
     const hubCard = document.createElement("div");
     hubCard.classList = `card bg-base-100 shadow-xl`;
 
@@ -84,7 +84,28 @@ const hubConTantClick = async (id) => {
 // using for load the data in modal
 const showPhoneDetails = (phone) => {
   console.log(phone);
-  console.log(phone.features['1'].feature_name);
+  const features = Object.values(phone.features)
+  // console.log(features[0].feature_name);
+  
+    // Create an empty string to hold the dynamic features HTML
+    let featuresHTML = "";
+    // Add each feature to the HTML string
+    features.forEach((feature) => {
+      featuresHTML += `<li>${feature.feature_name}</li>`;
+      
+    });
+
+
+    let integrationsHTML = "";
+    // Add each feature to the HTML string
+    phone.integrations.forEach((integra) => {
+      integrationsHTML += `<li>${integra}</li>`;
+      
+    });
+    // console.log(integrationsHTML);
+    
+
+  // console.log(phone.features['1'].feature_name);
   const showDetailContainer = document.getElementById("show-detail-container");
 
   showDetailContainer.innerHTML = `
@@ -103,17 +124,18 @@ Pro</h3>
 us <br>
 Enterprise</h3>
   </div>
-  <div class="flex justify-between mt-3">
+  <div class="flex justify-between gap-3 mt-3">
   <div>
       <h1 class='font-bold pb-2'>Features</h1>
-      <ul class = 'list-decimal'>
-       <li>${phone.features['1'].feature_name}</li>
-       <li>${phone.features['2'].feature_name}</li>
-       <li>${phone.features['3'].feature_name}</li>
+      <ul class = 'list-disc pl-3'>
+       ${featuresHTML}
       </ul>
   </div>
   <div>
       <h1 class='font-bold pb-2'>Integrations</h1>
+      <ul class = 'list-disc pl-3'>
+       ${integrationsHTML}
+      </ul>
   </div>
 </div>
 </div>
